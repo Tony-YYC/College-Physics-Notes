@@ -83,16 +83,20 @@ $$\oint_{L} \vec{E}d \vec{l} = 0$$
 
 ### 电势能
 
-$$W_a = A_{a \infty} = \int_{a}^{\infty} q_0 \vec{E} d \vec{l}$$
+$$W_a = A_{a p_0} = \int_{a}^{p_0} q_0 \vec{E} d \vec{l} = q_0 \int_{a}^{p_0} \vec{E} d \vec{l}  = q_0 V_a$$
+* $p_0$为零势能点或零势能面，一般默认无穷远处为电势零点，取$p_0= \infty$
 
 ### 电势差
 $$V_{ab} = \dfrac{W_a-W_b}{q_0} = V_a - V_b = \int_{a}^b \vec{E} d \vec{l}$$
 
+电势差与电场力做功的关系
 $$A_{ab}=q \int_{a}^b \vec{E} d \vec{l} = q(V_a-V_b)$$
 
 ### 电势
-$$V_a = \int_{a}^{\infty} \vec{E} d \vec{l}$$
-一般默认无穷远处$\infty$为电势零点，如果实际规定其他点为电势零点，需相应调整积分上限
+$$V_a = \int_{a}^{p_0} \vec{E} d \vec{l}$$
+* $p_0$为零势点或零势面，一般默认无穷远处为电势零点，取$p_0= \infty$
+* （常用）面对称情况：$V=-\int Edx$
+* （常用）球对称情况： $V=-\int Edr$
 
 ### 点电荷电势
 
@@ -108,10 +112,26 @@ $$V=\int dV=\int \dfrac{dq}{4 \pi \epsilon_0 r}$$
 ### 电势与电场强度的微分关系
 
 $$\boldsymbol{E} = - \nabla V$$
+直角坐标系: $$\boldsymbol{E} = -(\dfrac{\partial V}{\partial x} \vec i+\dfrac{\partial V}{\partial y} \vec j+\dfrac{\partial V}{\partial z} \vec k)$$
+平面极坐标系：$$\boldsymbol{E} = -(\dfrac{\partial V}{\partial r} \vec e_r+\dfrac{1}{r}\dfrac{\partial V}{\partial \theta} \vec e_\theta)$$
 
-## 11.5 解题技巧
+## 11.5 常用模型及解题技巧
 
 ### 电偶极子模型
+
+![Alt text](image-2.png) ![Alt text](image-3.png)
+
+定义电偶极矩：$\vec p = q \vec l$，且有 $p = ql$
+
+电偶极子在P点的电势： $V = \dfrac{q}{4 \pi \epsilon_0}\dfrac{r_--r_+}{r_-r_+} \approx \dfrac{qlcos\theta}{4 \pi \epsilon_0 r^2}= \dfrac{\vec p \cdot \vec r}{4 \pi \epsilon_0 r^3} = \dfrac{p cos \theta}{4 \pi \epsilon_0 r^2}$
+
+在对电势$V$求偏导得到电场强度：$\boldsymbol{E} = -(\dfrac{\partial V}{\partial r} \vec e_r+\dfrac{1}{r}\dfrac{\partial V}{\partial \theta} \vec e_\theta) =\dfrac{p cos \theta}{2 \pi \epsilon_0 r^3} \vec e_r + \dfrac{p sin \theta}{4 \pi \epsilon_0 r^3} \vec e_\theta = \dfrac{1}{4 \pi \epsilon_0 r^3}[- \vec p + \dfrac{3(\vec r \cdot \vec p)\vec r}{r^2}]$
+
+![Alt text](image-1.png)
+
+力偶矩为$M = Fl sin\theta = qElsin \theta = pEsin \theta$, $\vec M = \vec p \times \vec E$
+
+电势能为$W = W_+ + W_- = q(V_+ + V_-) = -qElcos \theta = -pE cos \theta= - \vec p \cdot \vec E$
 
 ### 几个重要模型的电场强度
 这些结果是通过积分或者高斯定理求得的，有些在考场上建议记住结论直接用。当然，也要熟悉它们是如何推导出来的。
@@ -131,20 +151,22 @@ $\boldsymbol{E} = \dfrac{xQ}{4 \pi \epsilon_0 (x^2+R^2)^{\frac{3}{2}}}$
 
 $\boldsymbol{E} = \dfrac{\sigma}{2 \epsilon_0}(1-\dfrac{x}{\sqrt{x^2+R^2}})$
 
-- 无限大均匀带电平面
+- **无限大均匀带电平面**
 
 $\boldsymbol{E} = \dfrac{\sigma}{2 \epsilon_0} \boldsymbol{e}_n$
 
 - 均匀**带电球面**
-$$ \boldsymbol{E}=
-\begin{cases}
-\ 0 & r<R \\
-\ \dfrac{Q}{4 \pi \epsilon_0 r^2} \boldsymbol{e}_r & r>R \\
-\end{cases}
-$$
+  $$
+  \boldsymbol{E}=
+  \begin{cases}
+  \ 0 & r<R \\
+  \ \dfrac{Q}{4 \pi \epsilon_0 r^2} \boldsymbol{e}_r & r>R \\
+  \end{cases}
+  $$
 
 - 均匀**带电球体**
-$$ \boldsymbol{E}=
+$$
+\boldsymbol{E}=
 \begin{cases}
 \ \dfrac{Q}{4 \pi \epsilon_0 R^3} \boldsymbol{r} & r<R \\
 \ \dfrac{Q}{4 \pi \epsilon_0 r^2} \boldsymbol{e}_r & r>R \\
@@ -152,15 +174,17 @@ $$ \boldsymbol{E}=
 $$
 
 - 无限长带电圆柱面
-$$ \boldsymbol{E}=
-\begin{cases}
-\ 0 & r<R \\
-\ \dfrac{\lambda}{2 \pi \epsilon_0 r} \boldsymbol{e}_r & r>R \\
-\end{cases}
-$$
+  $$
+  \boldsymbol{E}=
+  \begin{cases}
+  \ 0 & r<R \\
+  \ \dfrac{\lambda}{2 \pi \epsilon_0 r} \boldsymbol{e}_r & r>R \\
+  \end{cases}
+  $$
 
 - 无限长带电圆柱体
-$$ \boldsymbol{E}=
+$$
+\boldsymbol{E}=
 \begin{cases}
 \ \dfrac{\lambda}{2 \pi \epsilon_0 R^2} \boldsymbol{r} & r<R \\
 \ \dfrac{\lambda}{2 \pi \epsilon_0 r} \boldsymbol{e}_r & r>R \\
@@ -169,7 +193,43 @@ $$
 
 ### 电场强度的计算思路
 
+- 最基本方法：积分
+  - 适用：没法用高斯定理的一般情况
+  - 建立一个合适的坐标系
+  - 确定电荷密度
+  - 用电荷密度表示电荷元的电量$dq$（求$dq$）
+  - 通过$dq$，计算电荷元的电场强度$d\boldsymbol{E}$（求dE）
+  - 分解$d\boldsymbol{E}$为三个方向上的分量$d\boldsymbol{E}_x$ $d\boldsymbol{E}_y$ $d\boldsymbol{E}_z$
+    - 显然，一维情况可以直接跳过这一步，二维情况只需两个分量
+    - 对称性分析：对于二维或三维情况，往往能找到对称性，使其中某个方向的积分后结果显然为0。这样就能直接跳过这个方向分量的积分，简化计算
+  - 整理变量，积分，求场强分量，得到电场强度
+- 优先方法：高斯定理
+  - 适用：对称性好的模型，或者**补偿法**得到的对称性好的模型
+  - 找对称性
+  - 选取高斯面（具体原则见前面）
+  - 分析高斯面内电荷
+  - $\oiint_{S} \boldsymbol{E} \cdot d \boldsymbol{S}$，情况好的话直接算$E \cdot S$
+  - 代入公式，计算
+- 电势求导/求偏导
+  - 情况1：给了电势方程$V=V(x,y,z)$，那就直接$\boldsymbol{E} = - \nabla V$
+  - 情况2：无法直接计算电场强度，或者电势比电场强度更方便计算
+    - 先用电势叠加原理计算电势，然后再对电势求偏导得到电场强度的每个分量
+    - 典型例子：电偶极子模型
+    - 例子2：非均匀带电细圆环轴线上电场强度
+
 ### 电势的计算思路
+
+- 最基本方法：电场强度积分
+  - 先计算电场强度，然后代入$\int_{a}^{p_0} \vec{E} d \vec{l}$
+- 电势叠加原理：
+  - 先计算空间每个电荷元使得所计算点具有的电势$dV$，再对$dV$积分
+
+### 电势为0等势面的求法
+
+- 建立一个合适的坐标系
+- 列出方程 $V_+ + V_-=0$
+- 通过电势计算，把$V_+$和$V_-$计算出来，代入上述方程
+- 化简，得到等势面方程
 
 ### 补偿法
 - **补偿法**的目的是**恢复对称性**
