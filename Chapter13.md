@@ -307,7 +307,7 @@ $$
 2. 计算磁力矩
 3. 计算安培力做功
 
-### 几个安培力及磁力矩的模型
+### 几个安培力的模型
 
 1. 两平行长直载流导线间的安培力
    $$
@@ -315,61 +315,63 @@ $$
    $$
    <img src="assets/image-20240104211540792.png" alt="image-20240104211540792" style="zoom:67%;" />
 
-2. 载流线圈在匀强磁场中受到的磁力矩
+### 磁力矩与磁矩
 
-   <img src="assets/image-20240104213204304.png" alt="image-20240104213204304" style="zoom:50%;" />
+载流线圈在匀强磁场中受到的磁力矩
 
-   垂直的两边受力
-   $$
-   F_1 = BIl_1 \quad F_2 = BIl_2
-   $$
-   线圈所受磁力矩
-   $$
-   M = F_1l_1 cos \theta = BIl_1l_2sin\phi = BIS sin\phi
-   $$
-   引入磁矩的概念（方向如图，遵循右手螺旋定则）
-   $$
-   \vec{m} = IS \vec{e_n}
-   $$
-   则磁力矩大小可以写成
-   $$
-   \vec{M} = m \vec{e_n} \times \vec{B} = \vec{m} \times \vec{B}
-   $$
-   <img src="assets/image-20240104214159132.png" alt="image-20240104214159132" style="zoom:50%;" />
+<img src="assets/image-20240104213204304.png" alt="image-20240104213204304" style="zoom:50%;" />
 
-   <img src="assets/image-20240104214312655.png" alt="image-20240104214312655" style="zoom:50%;" />
+垂直的两边受力
+$$
+F_1 = BIl_1 \quad F_2 = BIl_2
+$$
+线圈所受磁力矩
+$$
+M = F_1l_1 cos \theta = BIl_1l_2sin\phi = BIS sin\phi
+$$
+引入**磁矩**的概念（方向如图，遵循右手螺旋定则）
+$$
+\vec{m} = IS \vec{e_n}
+$$
+则**磁力矩**大小可以写成
+$$
+\vec{M} = m \vec{e_n} \times \vec{B} = \vec{m} \times \vec{B}
+$$
+<img src="assets/image-20240104214159132.png" alt="image-20240104214159132" style="zoom:50%;" />
 
-   若线圈有N匝，也可以得出
+<img src="assets/image-20240104214312655.png" alt="image-20240104214312655" style="zoom:50%;" />
+
+若线圈有N匝，也可以得出
+$$
+\vec{M} = N \vec{m} \times \vec{B}
+$$
+还可得出，载流线圈在外磁场中的能量为
+$$
+W = -\vec{m} \cdot \vec{B} = mBcos\phi
+$$
+
+N匝时，有
+$$
+W = -N \vec{m} \cdot \vec{B} = NmBcos\phi
+$$
+
+### 安培力做功的计算
+
+1. 运动的载流导线
    $$
-   \vec{M} = N \vec{m} \times \vec{B}
+   A = F \Delta x = Bl \Delta x = I \Delta \Phi_m = I (\Phi_{mf}- \Phi_{mi})
    $$
-   还可得出，载流线圈在外磁场中的能量为
+
+   <img src="assets/image-20240104220152575.png" alt="image-20240104220152575" style="zoom:50%;" />
+
+   其中$\Phi_m$指扫过的面积的磁通量的增量
+
+2. 转动的载流线圈
    $$
-   W = -\vec{m} \cdot \vec{B} = \vec{m} \vec{B} cos\phi
+   dA = -Md\phi = I d\Phi_m \\
+   A = I \Delta \Phi_m = I (\Phi_{mf}- \Phi_{mi})
    $$
-   
-   N匝时，有
-   $$
-   W = -N \vec{m} \cdot \vec{B} = N \vec{m} \vec{B} cos\phi
-   $$
-   
-   ### 安培力做功的计算
-   
-   1. 运动的载流导线
-      $$
-      A = F \Delta x = Bl \Delta x = I \Delta \Phi_m = I (\Phi_{mf}- \Phi_{mi})
-      $$
-   
-      <img src="assets/image-20240104220152575.png" alt="image-20240104220152575" style="zoom:50%;" />
-   
-      其中$\Phi_m$指扫过的面积的磁通量的增量
-   
-   2. 转动的载流线圈
-      $$
-      dA = -Md\phi = I d\Phi_m \\
-      A = I \Delta \Phi_m = I (\Phi_{mf}- \Phi_{mi})
-      $$
-      P.S. 始末状态磁通量$\Phi_m$（尤其要注意方向）的计算，参见前面讲过的磁通量计算部分
+   P.S. 始末状态磁通量$\Phi_m$（尤其要注意方向）的计算，参见前面讲过的磁通量计算部分
 
 ## 13.6 带电粒子的运动与磁场
 
@@ -428,18 +430,35 @@ $$
 
 ### 霍尔效应
 
-<img src="assets/image-20240104225651109.png" alt="image-20240104225651109" style="zoom: 33%;" />
+<img src="assets/image-20240106131352934.png" alt="image-20240106131352934" style="zoom: 67%;" />
 
 如果磁场方向与电流方向垂直，则在与磁场B和电流I两者垂直的方向上出现横向电势差，这一现象称为霍尔效应。这个电势差称为**霍尔电势差**。
 
-下面推导一下霍尔电势差：
+#### 霍尔电势差大小计算
+
+下面推导一下霍尔电势差大小：
 $$
-\vec{F_m} + \vec{F_e} = 0 \implies qv_bd = qE \implies V_m- V_n = Eb = Bv_db \\
+\vec{F_m} + \vec{F_e} = 0 \implies qv_dB = qE \implies V_m- V_n = Eb = Bv_db \\
 且 I = n_q v_d bd \implies v_d = \dfrac{I}{nqbd} \\
 \implies \Delta V_H = V_m - V_n = \dfrac{1}{nq} \dfrac{BI}{d} \\
 set \thinspace R_h = \dfrac{1}{nq} \implies \Delta V_H = R_h \dfrac{BI}{d}
 $$
-记个结论就行：
+记一下**结论**：
 $$
 \Delta V_H = \dfrac{1}{nq} \dfrac{BI}{d} = R_H \dfrac{BI}{d} (set \thinspace R_H = \dfrac{1}{nq})
 $$
+
+#### 霍尔电势差方向判断
+
+和上面的计算思路很类似
+
+1. 判断载流子所受洛伦兹力方向
+2. 由于载流子所受电场力要与洛伦兹力抵消，霍尔电场对载流子的电场力和洛伦兹力反向
+3. 由霍尔电场对载流子的电场力方向，可知霍尔电场强度方向
+4. 有霍尔电场强度方向之后，就可以得到霍尔电势差的方向（沿电场强度方向，电势降低）
+
+**注意**：一般来说，导体的**载流子**默认是**电子，带负电**！！！
+
+## 14章内容补充
+
+![image-20240106125707275](assets/image-20240106125707275.png)
