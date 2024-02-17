@@ -780,16 +780,31 @@ $$
 
 理论计算，可得爱里斑对透镜中心的张角$\theta_1$与孔直径$D$和入射光$\lambda$的波长的关系为
 $$
-D \cdot sin \theta_1 \approx D \theta_1 \approx 1.22 \lambda
+D \cdot sin \theta_1 \approx D \theta_1 \approx 1.22 \lambda \\
+\implies \theta_1 = \dfrac{1.22 \lambda}{D}
+$$
+可以得出艾里斑半径为
+$$
+r = f \tan \theta_1 \approx f \theta_1 = 1.22 \dfrac{\lambda f}{D}
 $$
 <img src="assets/image-20240107173746060.png" alt="image-20240107173746060" style="zoom:33%;" />
 
 ### 光学仪器的分辨力
 
 <img src="assets/image-20240107184236122.png" alt="image-20240107184236122" style="zoom:50%;" />
+
+**最小可分辨张角**即为艾里斑对透镜中心的张角
 $$
-最小可分辨张角 \delta \theta = \dfrac{1.22\lambda}{D}  \\
-分辨本领R  =  \dfrac{1}{\delta \theta} = \dfrac{D}{1.22\lambda}
+\delta \theta = \dfrac{1.22\lambda}{D}
+$$
+
+**最小可分辨点距**即为艾里斑半径
+$$
+d_{min} = f \cdot \delta \theta = 1.22 \dfrac{\lambda f}{D}
+$$
+定义**分辨本领**为
+$$
+R  =  \dfrac{1}{\delta \theta} = \dfrac{D}{1.22\lambda}
 $$
 
 ## 17.6 光栅衍射
@@ -825,11 +840,23 @@ I(\theta) = I_0 (\dfrac{sin \beta}{\beta})^2(\dfrac{sinN \alpha}{sin \alpha})^2 
 $$
 $I_0$为单缝衍射最大光强，$\dfrac{sin \beta}{\beta}$为**单缝衍射**因子，$\dfrac{sinN \alpha}{sin \alpha}$是**缝间干涉**因子
 
-这个式子的物理意义是：多缝衍射本质上是**单缝衍射**和**多缝干涉**的叠加
+这个式子的**物理意义**是：多缝衍射本质上是**单缝衍射**和**多缝干涉**的叠加
+
+**N缝光栅的衍射等效于单缝衍射+N束相干光的干涉**
+
+<img src="assets/image-20240108141453290.png" alt="image-20240108141453290" style="zoom:50%;" />
 
 单缝衍射光强分布前面已经分析过，这里直接分析多缝干涉光强
 
 ### 光强分布分析（多缝干涉）
+
+多缝干涉的光强取决于**缝间干涉**因子
+$$
+J(\alpha) = \dfrac{sinN \alpha}{sin \alpha} \quad \alpha = \dfrac{\pi d sin \theta}{\lambda}
+$$
+<img src="assets/image-20240108141341479.png" alt="image-20240108141341479" style="zoom: 50%;" />
+
+此处省略一系列对$J(\alpha)$求导找极值点的过程，直接给出结论
 
 #### 干涉主极大（眀纹条件）
 
